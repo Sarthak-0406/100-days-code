@@ -1,0 +1,21 @@
+int main()
+{
+    float P, R, T, SI, CI, amount;
+
+    printf("Enter Principal amount: ");
+    scanf("%f", &P);
+
+    printf("Enter Rate of interest: ");
+    scanf("%f", &R);
+
+    printf("Enter Time (in years): ");
+    scanf("%f", &T);
+    SI = (P * R * T) / 100;
+    amount = P * pow((1 + R / 100), T);
+    CI = amount - P;
+
+    printf("Simple Interest = %.2f", SI);
+    printf("Compound Interest = %.2f", CI);
+
+    return 0;
+}
