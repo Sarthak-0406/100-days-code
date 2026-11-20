@@ -1,0 +1,33 @@
+#include <stdio.h>
+
+int main() {
+    int a[10][10], n, i, j, k;
+    int d[20], count = 0, flag = 1;
+
+    scanf("%d", &n);
+
+    for (i = 0; i < n; i++)
+        for (j = 0; j < n; j++)
+            scanf("%d", &a[i][j]);
+
+    for (i = 0; i < n; i++) {
+        d[count++] = a[i][i];
+
+        if (i != n - 1 - i)
+            d[count++] = a[i][n - 1 - i];
+    }
+
+    for (i = 0; i < count; i++) {
+        for (j = i + 1; j < count; j++) {
+            if (d[i] == d[j])
+                flag = 0;
+        }
+    }
+
+    if (flag == 1)
+        printf("All diagonal elements are distinct");
+    else
+        printf("Diagonal elements are not distinct");
+
+    return 0;
+}
